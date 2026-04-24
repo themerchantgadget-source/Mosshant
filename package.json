@@ -1,1 +1,33 @@
-{\n  "name": "mosshant",\n  "version": "1.0.0",\n  "private": true,\n  "workspaces": [\n    "backend",\n    "frontend"\n  ],\n  "scripts": {\n    "start": "concurrently \"npm run start --workspace=backend\" \"npm run start --workspace=frontend\"",\n    "install": "lerna bootstrap"\n  },\n  "devDependencies": {\n    "concurrently": "^6.0.0",\n    "lerna": "^4.0.0"\n  }\n}
+{
+  "name": "mosshant",
+  "version": "0.1.0",
+  "description": "A web-based SSH/mosh client and connection manager",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace=backend\" \"npm run dev --workspace=frontend\"",
+    "build": "npm run build --workspace=backend && npm run build --workspace=frontend",
+    "start": "npm start --workspace=backend",
+    "test": "npm test --workspace=backend && npm test --workspace=frontend"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  },
+  "keywords": [
+    "ssh",
+    "mosh",
+    "terminal",
+    "remote-shell",
+    "web-based",
+    "connection-manager"
+  ],
+  "author": "themerchantgadget-source",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/themerchantgadget-source/mosshant.git"
+  }
+}
